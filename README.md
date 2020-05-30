@@ -1,4 +1,4 @@
-#### Skånetrafiken Dashboard
+# Skånetrafiken Dashboard
 This site displays the next upcomming departures from up to four choosen busstops in Skåne using Skånetrafikens API (http://www.labs.skanetrafiken.se/).
 The current weather and a forecast for the next upcomming 15 hours is also shown, along a digital clock. 
 
@@ -6,7 +6,11 @@ The current weather and a forecast for the next upcomming 15 hours is also shown
 The developers ideé was to have this site on an always on display in his hallway so that he easily could see when the next bus departures. 
 
 ## Installation
-
+1.  Git clone https://github.com/Vixen666/skanetrafiken-dashboard-react/
+2.  cd skanetrafiken-dashboard-react
+3.  npm install
+4.  npm start
+5.  Allow CORS. For chrome there's alot of plugins, like https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
 
 ## Reason for React
 
