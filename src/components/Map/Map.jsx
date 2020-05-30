@@ -24,7 +24,6 @@ export default function Map() {
           height: "1px",
           minHeight: "100%",
         }}
-        onChange={(e) => console.log(e)}
       />
     </>
   );

@@ -45,8 +45,6 @@ const Departures = () => {
 
   useEffect(() => {
     let temp = JSON.parse(localStorage.getItem("savedSearches"));
-    console.log(temp);
-
     if (temp && temp.length > 0) {
       dispatch(setSavedDepartures(temp));
     }
@@ -148,8 +146,7 @@ const Departures = () => {
         .catch(function (error) {
           // handle error
           new Error(error);
-        })
-        .finally(function () {});
+        });
     }
   };
 

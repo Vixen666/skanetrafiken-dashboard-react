@@ -5,7 +5,6 @@ import {
   setTimeNow,
   getTimeNow,
 } from "../../features/departure/departureSlice";
-import AddDepartureModal from "../Departures/AddDepartureModal";
 const { DigitalWatch } = WatchStyled;
 
 const Watch = () => {

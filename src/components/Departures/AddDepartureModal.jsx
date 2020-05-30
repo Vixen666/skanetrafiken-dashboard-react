@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Button, Modal, Table, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import {
   saveTempPoints,
@@ -79,11 +79,14 @@ const AddDepartureModal = () => {
     if (temp.fromId !== null && temp.toId !== null) {
       dispatch(saveTempPoints(temp));
     }
-    localStorage.setItem("savedSearches", JSON.stringify([...allSavedSearches, temp]));
+    localStorage.setItem(
+      "savedSearches",
+      JSON.stringify([...allSavedSearches, temp])
+    );
   };
 
   const saveGps = (e) => {
-    dispatch(setGps(e.target.value))
+    dispatch(setGps(e.target.value));
     localStorage.setItem("gps", JSON.stringify(e.target.value));
   };
 
@@ -98,55 +101,79 @@ const AddDepartureModal = () => {
           <Modal.Title>Add a journey</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Set Map Location:
-          <input type="text" onChange={(e) => saveGps(e)}></input>
-          From:
-          <input type="text" onChange={(e) => searchAPI(e, 0)}></input>
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>From</th>
-              </tr>
-            </thead>
-            <tbody>
-              {from.map((point, index) => (
-                <tr
-                  key={"to_" + from}
-                  onClick={() => addToTemp(point, 0)}
-                  style={{
-                    backgroundColor:
-                      point.id === temp.fromId ? "lightblue" : "",
-                  }}
-                >
-                  <td>{point.name}</td>
+          <Row>
+            <Col>Set Map Location*:</Col>
+            <Col>
+              <input type="text" onChange={(e) => saveGps(e)}></input>
+            </Col>
+          </Row>
+          <Row>
+            <Col> From:</Col>
+            <Col>
+              <input type="text" onChange={(e) => searchAPI(e, 0)}></input>
+            </Col>
+          </Row>
+          <Row>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>From</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-          To:
-          <input type="text" onChange={(e) => searchAPI(e, 1)}></input>
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>From</th>
-              </tr>
-            </thead>
-            <tbody>
-              {to.map((point, index) => (
-                <tr
-                  key={"to_" + index}
-                  onClick={() => addToTemp(point, 1)}
-                  style={{
-                    backgroundColor: point.id === temp.toId ? "lightblue" : "",
-                  }}
-                >
-                  <td>{point.name}</td>
+              </thead>
+              <tbody>
+                {from.map((point, index) => (
+                  <tr
+                    key={"to_" + from + "_" + index}
+                    onClick={() => addToTemp(point, 0)}
+                    style={{
+                      backgroundColor:
+                        point.id === temp.fromId ? "lightblue" : "",
+                    }}
+                  >
+                    <td>{point.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Row>
+          <Row>
+            <Col>To:</Col>
+            <Col>
+              <input type="text" onChange={(e) => searchAPI(e, 1)}></input>
+            </Col>
+          </Row>
+          <Row>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>From</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {to.map((point, index) => (
+                  <tr
+                    key={"to_" + index}
+                    onClick={() => addToTemp(point, 1)}
+                    style={{
+                      backgroundColor:
+                        point.id === temp.toId ? "lightblue" : "",
+                    }}
+                  >
+                    <td>{point.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Row>
         </Modal.Body>
         <Modal.Footer>
+          <p>
+            * To find correct GPS-coordinates locate the correct stop on{" "}
+            <a href="https://skanetrafiken.livemap24.com/">
+              https://skanetrafiken.livemap24.com/
+            </a>{" "}
+            and copy the coordinates after '@'
+          </p>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
