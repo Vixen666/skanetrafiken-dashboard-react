@@ -19,3 +19,6 @@ Even thou both Angular and Vue.js is growing and taking larger larger marketshar
 ### Source
 [1] https://www.similartech.com/categories/javascript
 
+### Developer
+Johannes Roos
+
