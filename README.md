@@ -10,7 +10,7 @@ The developers ideé was to have this site on an always on display in his hallwa
 2.  cd skanetrafiken-dashboard-react
 3.  npm install
 4.  npm start
-5.  Allow CORS. For chrome there's alot of plugins, like https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
+5.  Allow CORS. Since no backend is developed and skånetrafiken isnt allowing cors this needs to be enabled from the client-side. For chrome there's alot of plugins, like https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
 
 ## Reason for React
 
