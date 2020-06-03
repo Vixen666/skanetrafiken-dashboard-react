@@ -9,11 +9,12 @@ export default function Map() {
   
   useEffect(() => {
     let gps = JSON.parse(localStorage.getItem("gps"));
-
+    console.log(gps)
     if (gps !== null) {
       dispatch(setGps(gps));
     }
   }, [dispatch]);
+
   return (
     <>
       <IframeResizer

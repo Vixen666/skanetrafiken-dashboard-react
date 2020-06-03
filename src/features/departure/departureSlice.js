@@ -5,24 +5,13 @@ export const departureSlice = createSlice({
   initialState: {
     haveLoadedSavedDepartures: false,
     savedDepartures: [
-      {
-        from: "Uts%C3%A4ttaregr%C3%A4nden",
-        fromId: "81750",
-        to: "lund%20C",
-        toId: "81216",
-      },
-      {
-        from: "lund%20C",
-        fromId: "81216",
-        to: "malm%F6%20C",
-        toId: "80000",
-      },
+  
     ],
     journeys: [],
     currentWeather: {},
     upcommingWeather: [],
     timeNow: null,
-    gps: "55.607910,13.002608,16.84",
+    gps: "",
   },
   reducers: {
     setHaveLoaded: (state) => {

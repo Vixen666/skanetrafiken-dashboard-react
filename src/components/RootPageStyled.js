@@ -17,7 +17,7 @@ const RootDiv = styled.div`
     height: auto;
     overflow: visible;
     grid-template-columns: auto;
-    grid-template-rows: 60vh 35vh 60vh 25vh;
+    grid-template-rows: auto auto 60vh auto;
     grid-column-gap: 1%;
     grid-row-gap: 1%;
     background-color: #121212;
@@ -38,6 +38,7 @@ const WatchDiv = styled.div`
   @media (max-width: 1000px) {
     grid-row: 4;
     grid-column: 1;
+    min-height: 20vh;
   }
 `;
 
@@ -45,6 +46,7 @@ const DeparturesDiv = styled.div`
   grid-row: 1;
   @media (max-width: 1000px) {
     grid-row: 1;
+    height: auto;
   }
 `;
 

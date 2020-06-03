@@ -47,6 +47,7 @@ const Departures = () => {
     let temp = JSON.parse(localStorage.getItem("savedSearches"));
     if (temp && temp.length > 0) {
       dispatch(setSavedDepartures(temp));
+      loadContent();
     }
   }, []);
 
